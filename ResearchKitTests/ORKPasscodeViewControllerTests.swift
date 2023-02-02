@@ -91,7 +91,7 @@ class ORKPasscodeViewControllerTests: XCTestCase {
         testExpectation = expectation(description: "ORKPasscodeViewController calls the delegate as the result of the user cancelling")
         self.asyncExpectation = testExpectation
         
-        stepController.passcodeDelegate?.passcodeViewControllerDidCancel?(stepController)
+        stepController.passcodeDelegate?.passcodeViewControllerUserDidCancel?(stepController)
         
         waitForExpectations(timeout: 10) { (error) in
             if let error = error {
@@ -141,7 +141,7 @@ extension ORKPasscodeViewControllerTests: ORKPasscodeDelegate {
         expectation.fulfill()
     }
     
-    func passcodeViewControllerDidCancel(_ viewController: UIViewController) {
+    func passcodeViewControllerUserDidCancel(_ viewController: UIViewController) {
         guard let expectation = asyncExpectation else {
             XCTFail("Delegate was not setup correctly. Missing XCTExpectation reference")
             return

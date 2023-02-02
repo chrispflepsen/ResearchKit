@@ -173,7 +173,7 @@ static CGFloat const kForgotPasscodeHeight              = 100.0f;
         
         // Check to see if cancel button should be set or not.
         if (self.passcodeDelegate &&
-            [self.passcodeDelegate respondsToSelector:@selector(passcodeViewControllerDidCancel:)]) {
+            [self.passcodeDelegate respondsToSelector:@selector(passcodeViewControllerUserDidCancel:)]) {
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:ORKLocalizedString(@"BUTTON_CANCEL", nil)
                                                                                       style:UIBarButtonItemStylePlain
                                                                                      target:self
@@ -381,8 +381,8 @@ static CGFloat const kForgotPasscodeHeight              = 100.0f;
 
 - (void)cancelButtonAction {
     if (self.passcodeDelegate &&
-        [self.passcodeDelegate respondsToSelector:@selector(passcodeViewControllerDidCancel:)]) {
-        [self.passcodeDelegate passcodeViewControllerDidCancel:self];
+        [self.passcodeDelegate respondsToSelector:@selector(passcodeViewControllerUserDidCancel:)]) {
+        [self.passcodeDelegate passcodeViewControllerUserDidCancel:self];
     }
 }
 
