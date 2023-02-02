@@ -105,7 +105,7 @@ static void *_ORKScrollViewObserverContext = &_ORKScrollViewObserverContext;
     return [super initWithTarget:scrollView
                         keyPaths:@[ @"contentOffset" ]
                         delegate:delegate
-                          action:@selector(didScroll:)
+                          action:@selector(scrollViewPositionChanged:)
                          context:_ORKScrollViewObserverContext];
 }
 

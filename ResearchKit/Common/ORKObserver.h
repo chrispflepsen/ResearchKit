@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ORKScrollViewObserverDelegate <NSObject>
 
 @required
-- (void)didScroll:(UIScrollView *)scrollView;
+- (void)scrollViewPositionChanged:(UIScrollView *)scrollView;
 
 @end
 
